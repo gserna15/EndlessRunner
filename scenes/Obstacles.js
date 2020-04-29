@@ -22,7 +22,7 @@ class Obstacles extends Phaser.Physics.Arcade.Sprite {
         }
         else {
             //this.texture.key = 'downGem';
-            this.scaleY = Math.floor(Math.random() * (9 - 6)) + 6;           
+            this.scaleY = Math.floor(Math.random() * (9 - 6)) + 6;
             //this.scaleY = Math.floor(Math.random() * (2-1) + 2);
         }
 
