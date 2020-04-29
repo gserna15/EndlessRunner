@@ -1,14 +1,6 @@
 // tame the javashrek
 "use strict";
 
-// global variables
-let cursors;
-let currentScene = 0;
-const SCALE = 0.5;
-const tileSize = 35;
-var spaceBar;
-var music;
-
 // main game object
 let config = {
     type: Phaser.WEBGL,
@@ -17,7 +9,7 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true,
+            debug: false,
             gravity: {
                 x: 0,
                 y: 0
@@ -27,4 +19,15 @@ let config = {
     scene: [ Load, Runner ]
 };
 
+//define game
 let game = new Phaser.Game(config);
+
+// global variables
+const SCALE = 0.5;
+const tileSize = 35;
+var spaceBar;
+var music;
+const obstacleWidth = 100;
+const obstacleHeight = 300;
+let obstacle = null;
+let centerX = game.config.width/2;
