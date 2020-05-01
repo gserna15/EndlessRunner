@@ -24,6 +24,10 @@ class Runner extends Phaser.Scene {
         this.space.tileScaleX = .25;
         this.space.tileScaleY = .25;
 
+        //add cloud background score cloud
+        //this.scoreCloud = this.add.sprite(5,5,120,60,'scoreCloud').setOrigin(0,0);
+        this.cloud = this.add.sprite(115, 40, 'cloud');
+
         // make ground tiles group
         this.ground = this.add.group();
         for(let i = 0; i < game.config.width; i += tileSize) {
@@ -62,6 +66,9 @@ class Runner extends Phaser.Scene {
         this.dragonGirl.body.collideWorldBounds = true;
         this.physics.add.collider(this.dragonGirl, this.obstacleGroup.children.entries);
 
+        //bind score property to scene
+        //this.p1Score = 0;
+
          // score display
          this.scoreConfig = {
             fontFamily: 'Courier',
@@ -75,6 +82,9 @@ class Runner extends Phaser.Scene {
             },
             fixedWidth: 200
         }
+
+        //this.space = this.add.text(69, 54, this.p1Score, scoreConfig);
+        this.space = this.add.text(22, 24, 'Score: 0' , { fontSize: '32px', fill: '#000' });
     }
 
     addObstacle() {
